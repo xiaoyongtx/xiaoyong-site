@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = [
+  { name: 'AI智能体开发', level: 95 },
+  { name: 'Coze智能体', level: 92 },
+  { name: 'Python编程', level: 90 },
+  { name: '自动化工具', level: 88 },
+  { name: '私域运营', level: 85 },
+];
+
+const timeline = [
+  {
+    year: '2025',
+    title: 'AI副业之路',
+    description: '专注AI智能体方向，变现5位数，成为AI私域赚钱星球智能体首席教练',
+  },
+  {
+    year: '2025',
+    title: '开启副业',
+    description: '在国企工作之余，开始探索AI副业，专注智能体开发',
+  },
+  {
+    year: '现在',
+    title: '社群运营提效',
+    description: '用智能体为社群运营提效，已在AI私域赚钱星球落地',
+  },
+];
+---
+
+<Layout title="关于我 - 小勇同学" description="了解小勇同学的AI副业之路、国企程序员身份、智能体开发经验和个人故事">
+  <div class="bg-gradient-to-br from-primary-50 via-white to-primary-100 py-16">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="heading-1 text-center mb-8">关于我</h1>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 mb-12">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-48 h-48 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-6xl">👨‍💻</span>
+            </div>
+            <div>
+              <h2 class="heading-2 mb-4">你好，我是小勇同学</h2>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                🏠 老家江西，现居郑州
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                一个在<span class="text-primary-600 font-semibold">国企搞副业的程序员</span>～
+              </p>
+              <p class="text-gray-600 leading-relaxed">
+                2025年开启副业，专注<span class="text-primary-600 font-semibold">AI智能体方向</span>，
+                致力于帮助更多人通过AI智能体提升效率、创造价值。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-2xl shadow-sm p-8">
+            <h3 class="heading-3 mb-6">📌 核心标签</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">国企程序员</span>
+              <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">AI副业探索者</span>
+              <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">智能体首席教练</span>
+              <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Coze专家</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-sm p-8">
+            <h3 class="heading-3 mb-6">🎯 我的使命</h3>
+            <p class="text-gray-600 leading-relaxed">
+              帮助更多人了解和拥抱AI技术，通过AI智能体提升工作效率，
+              开启属于自己的副业之路。在AI时代，每个人都可以成为超级个体。
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 mb-12 text-white">
+          <h3 class="heading-3 mb-6">🌟 关于我</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-primary-200 mr-3">✦</span>
+              <span>2025年开启副业，专注AI智能体方向，<strong>变现5位数</strong></span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-200 mr-3">✦</span>
+              <span>AI私域赚钱星球<strong>智能体首席教练</strong>，指导过<strong>近1000名学员</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm p-8 mb-12">
+          <h3 class="heading-3 mb-6">🚀 正在做</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✦</span>
+              <span>用智能体为社群运营提效，已在AI私域赚钱星球落地</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✦</span>
+              <span>Coze智能体<strong>1v1陪跑</strong>，<strong>40+学员</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm p-8 mb-12">
+          <h3 class="heading-3 mb-6">💡 我能提供</h3>
+          <ul class="grid md:grid-cols-2 gap-4">
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✓</span>
+              <span>100+副业实战项目SOP</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✓</span>
+              <span>Coze智能体从0到1实战</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✓</span>
+              <span>大冲私教</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-500 mr-3">✓</span>
+              <span>靠谱销冠、IDO老徐合伙人</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm p-8 mb-12">
+          <h3 class="heading-3 mb-8">🛠️ 技术栈</h3>
+          <div class="space-y-6">
+            {skills.map((skill) => (
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium text-gray-700">{skill.name}</span>
+                  <span class="text-primary-600 font-medium">{skill.level}%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm p-8 mb-12">
+          <h3 class="heading-3 mb-8">📅 成长历程</h3>
+          <div class="space-y-8">
+            {timeline.map((item, index) => (
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-24 text-right">
+                  <span class="text-lg font-bold text-primary-600">{item.year}</span>
+                </div>
+                <div class="relative flex-shrink-0">
+                  <div class="w-4 h-4 bg-primary-500 rounded-full"></div>
+                  {index < timeline.length - 1 && (
+                    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary-200"></div>
+                  )}
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                  <p class="text-gray-600 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 text-white text-center">
+          <h3 class="heading-3 mb-4">🤝 联系我</h3>
+          <p class="mb-6 opacity-90">
+            公众号：<strong>我是小勇同学</strong>
+          </p>
+          <p class="mb-6 opacity-90">
+            如果你有任何问题、合作想法，或者只是想聊聊AI副业，随时欢迎联系我！
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://mp.weixin.qq.com" target="_blank" class="btn bg-white text-primary-600 hover:bg-primary-50">
+              📧 关注公众号
+            </a>
+            <a href="/products" class="btn bg-primary-600 text-white border-2 border-white hover:bg-primary-700">
+              🚀 了解产品
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

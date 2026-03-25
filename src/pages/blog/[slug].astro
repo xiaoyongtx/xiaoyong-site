@@ -1,0 +1,261 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'ai-agent-automation' } },
+    { params: { slug: 'side-hustle-ways' } },
+    { params: { slug: 'astro-blog-setup' } },
+    { params: { slug: 'chatgpt-prompt-engineering' } },
+    { params: { slug: 'ai-side-hustle-journey' } },
+    { params: { slug: 'ai-tools-recommendation' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const articles: Record<string, any> = {
+  'ai-agent-automation': {
+    title: '如何用AI智能体实现自动化办公',
+    date: '2024-03-20',
+    badge: 'AI智能体',
+    readTime: '8分钟',
+    content: `
+      <p>在日常工作中，我们常常被各种重复性任务所困扰：处理邮件、整理文档、排程会议...</p>
+      <p>今天，我想分享我是如何利用AI智能体来自动化这些工作，从而腾出更多时间专注于真正重要的事情。</p>
+      <h2>为什么选择AI智能体？</h2>
+      <p>相比传统的自动化工具（如IFTTT、Zapier），AI智能体具有以下优势：</p>
+      <ul>
+        <li>更强的理解能力：能够理解自然语言指令</li>
+        <li>更灵活的处理：能够处理非结构化数据</li>
+        <li>持续学习：能够从交互中不断优化</li>
+      </ul>
+      <h2>我的自动化办公方案</h2>
+      <p>我搭建了一套基于AI的自动化办公系统，包括：</p>
+      <ol>
+        <li>邮件智能分类与回复助手</li>
+        <li>会议纪要自动生成工具</li>
+        <li>日程智能安排系统</li>
+        <li>文档摘要与归档助手</li>
+      </ol>
+      <p>这些工具让我每天节省了至少2小时的重复性工作。</p>
+      <h2>开始你的AI自动化之旅</h2>
+      <p>如果你也想尝试AI自动化办公，建议从最简单的场景开始，比如使用ChatGPT来处理日常邮件回复。</p>
+      <p>记住：AI是助手，不是替代品。合理利用AI，让它成为你工作效率的倍增器！</p>
+    `,
+  },
+  'side-hustle-ways': {
+    title: '程序员副业赚钱的5种方式',
+    date: '2024-03-18',
+    badge: '副业变现',
+    readTime: '10分钟',
+    content: `
+      <p>作为程序员，我们有很多独特的优势可以用于开展副业。今天分享5种我实践过的副业赚钱方式。</p>
+      <h2>1. 开发SaaS产品</h2>
+      <p>利用技术能力开发解决特定问题的在线工具或服务。比如我开发的ChatGPT提示词库网站。</p>
+      <h2>2. 技术博客与内容创作</h2>
+      <p>分享技术经验和见解，通过广告、赞助和付费内容变现。关键是要持续输出有价值的内容。</p>
+      <h2>3. 开发AI智能体</h2>
+      <p>为特定场景定制AI智能体解决方案，服务企业或个人客户。这是一个正在快速增长的领域。</p>
+      <h2>4. 在线课程与教程</h2>
+      <p>将专业知识打包成课程，在Udemy、小报童等平台销售。一次制作，长期收益。</p>
+      <h2>5. 技术咨询与外包</h2>
+      <p>利用业余时间承接技术咨询或开发项目。适合有一定人脉积累的开发者。</p>
+      <h2>我的建议</h2>
+      <p>选择副业方向时，考虑三个因素：你擅长的、你有热情的、市场有需求的。三者交集就是最好的选择。</p>
+    `,
+  },
+  'astro-blog-setup': {
+    title: 'Astro框架实战：快速搭建高性能博客',
+    date: '2024-03-15',
+    badge: '技术教程',
+    readTime: '12分钟',
+    content: `
+      <p>最近我使用Astro框架重构了我的个人博客，体验非常棒。今天分享如何用Astro快速搭建一个高性能博客网站。</p>
+      <h2>为什么选择Astro？</h2>
+      <ul>
+        <li>极致的性能：默认静态生成，页面加载速度极快</li>
+        <li>内容优先：原生支持Markdown和MDX</li>
+        <li>框架无关：可以混合使用React、Vue、Svelte等组件</li>
+        <li>开发者体验好：配置简单，上手快</li>
+      </ul>
+      <h2>项目初始化</h2>
+      <p>使用官方CLI工具，几分钟就能创建一个完整的项目：</p>
+      <pre><code>npm create astro@latest my-blog -- --template blog</code></pre>
+      <h2>集成Tailwind CSS</h2>
+      <p>添加Tailwind CSS支持，让样式开发更加高效：</p>
+      <pre><code>npx astro add tailwind</code></pre>
+      <h2>部署上线</h2>
+      <p>Astro项目可以轻松部署到Vercel、Netlify等平台，享受全球CDN加速。</p>
+      <p>完整的教程和源码，我会在后续文章中详细分享。</p>
+    `,
+  },
+  'chatgpt-prompt-engineering': {
+    title: 'ChatGPT提示词工程最佳实践',
+    date: '2024-03-12',
+    badge: 'AI工具',
+    readTime: '9分钟',
+    content: `
+      <p>掌握提示词工程（Prompt Engineering）是有效使用ChatGPT的关键。今天分享一些实用的提示词技巧。</p>
+      <h2>基础原则</h2>
+      <ul>
+        <li>清晰具体：避免模糊的指令</li>
+        <li>提供上下文：给出足够的背景信息</li>
+        <li>指定格式：告诉AI你期望的输出格式</li>
+      </ul>
+      <h2>进阶技巧</h2>
+      <h3>1. Few-shot Learning</h3>
+      <p>通过提供几个示例，让AI理解你的需求模式。</p>
+      <h3>2. Chain of Thought</h3>
+      <p>让AI逐步思考，可以提高复杂问题的准确性。</p>
+      <h3>3. Role Prompting</h3>
+      <p>给AI分配一个角色，如"你是一位资深程序员"，可以提升回答的专业性。</p>
+      <h2>我的提示词模板</h2>
+      <p>在实际工作中，我总结了一套提示词模板，覆盖了日常工作的各种场景。</p>
+      <p>想要获取我的完整提示词模板库？可以在产品页面查看。</p>
+    `,
+  },
+  'ai-side-hustle-journey': {
+    title: '从0到1：一个程序员的AI副业探索之路',
+    date: '2024-03-10',
+    badge: '个人故事',
+    readTime: '11分钟',
+    content: `
+      <p>今天想聊聊我的AI副业探索历程，希望能给想开始副业的朋友一些启发。</p>
+      <h2>为什么开始？</h2>
+      <p>2021年，ChatGPT刚发布，我就被它震撼到了。作为程序员，我敏锐地意识到：AI时代来了。</p>
+      <p>我不想只是旁观者，我想成为参与者。于是开始利用业余时间学习AI、研究AI应用。</p>
+      <h2>遇到的困难</h2>
+      <ul>
+        <li>时间管理：平衡主业和副业并不容易</li>
+        <li>方向选择：AI领域太大了，不知道从哪里切入</li>
+        <li>持续动力：没有收入时如何保持热情？</li>
+      </ul>
+      <h2>我的突破</h2>
+      <p>转机出现在2023年。当我开始把AI能力产品化，服务真实用户时，一切都不一样了。</p>
+      <p>第一个付费用户、第一笔收入、第一批忠实用户...这些正向反馈让我更加坚定地走下去。</p>
+      <h2>给新手的建议</h2>
+      <p>不要等准备好了再开始。先动手，遇到问题再解决。AI时代，行动力比完美更重要。</p>
+    `,
+  },
+  'ai-tools-recommendation': {
+    title: '5款提升效率的AI工具推荐',
+    date: '2024-03-08',
+    badge: '工具推荐',
+    readTime: '7分钟',
+    content: `
+      <p>日常工作中，我重度使用这5款AI工具，显著提升了工作效率。</p>
+      <h2>1. ChatGPT / Claude</h2>
+      <p>通用对话AI，用于写作、编程、思考辅助。我个人两个都在用，互补使用。</p>
+      <h2>2. GitHub Copilot</h2>
+      <p>编程AI助手，代码补全和生成非常强大。已经成为我开发时不可或缺的工具。</p>
+      <h2>3. Midjourney / DALL-E</h2>
+      <p>AI绘图工具，用于生成配图和创意素材。设计师的好帮手。</p>
+      <h2>4. Notion AI</h2>
+      <p>集成在Notion中的AI功能，用于笔记整理、内容摘要、写作辅助。</p>
+      <h2>5. Raycast AI</h2>
+      <p>Mac上的效率工具之王，AI功能让操作更加智能化。</p>
+      <h2>我的建议</h2>
+      <p>工具不在多，在于精通。选择几款适合你的工具，持续使用，形成工作流。</p>
+    `,
+  },
+};
+
+const article = articles[slug as string] || {
+  title: '文章未找到',
+  date: '',
+  badge: '',
+  readTime: '',
+  content: '<p>抱歉，这篇文章不存在或已被删除。</p>',
+};
+---
+
+<Layout title={`${article.title} - 小勇同学`} description={`阅读${article.title}，了解更多关于AI智能体开发、副业变现的经验和技巧`}>
+  <article class="bg-white py-16">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <a href="/blog" class="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8">
+          ← 返回博客
+        </a>
+
+        <header class="mb-12">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full">
+              {article.badge}
+            </span>
+            <span class="text-gray-500 text-sm">{article.readTime}阅读</span>
+          </div>
+
+          <h1 class="heading-1 mb-6">{article.title}</h1>
+
+          <div class="flex items-center gap-4 text-gray-600">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+              <span class="text-white text-sm">小</span>
+            </div>
+            <div>
+              <div class="font-medium text-gray-900">小勇同学</div>
+              <div class="text-sm">{article.date}</div>
+            </div>
+          </div>
+        </header>
+
+        <div class="prose prose-lg max-w-none" set:html={article.content} />
+
+        <hr class="my-12 border-gray-200" />
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-between items-center">
+          <a href="/blog" class="btn-secondary">
+            ← 返回博客列表
+          </a>
+          <div class="flex gap-4">
+            <button class="p-3 bg-gray-100 rounded-full hover:bg-primary-100 hover:text-primary-600 transition-colors" title="分享到微博">
+              分享
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply text-gray-600 leading-relaxed mb-4;
+  }
+
+  .prose ul, .prose ol {
+    @apply text-gray-600 mb-4 pl-6;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto mb-4;
+  }
+
+  .prose code {
+    @apply font-mono text-sm;
+  }
+
+  .prose a {
+    @apply text-primary-600 hover:text-primary-700 underline;
+  }
+</style>

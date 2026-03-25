@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const latestArticles = [
+  {
+    title: '如何用AI智能体实现自动化办公',
+    description: '分享我如何使用AI智能体提升工作效率，包括邮件处理、日程管理等场景的实际应用。',
+    date: '2024-03-20',
+    badge: 'AI智能体',
+    href: '/blog/ai-agent-automation',
+  },
+  {
+    title: '程序员副业赚钱的5种方式',
+    description: '从0到1打造副业收入，程序员如何利用技术优势在业余时间创造价值。',
+    date: '2024-03-18',
+    badge: '副业变现',
+    href: '/blog/side-hustle-ways',
+  },
+  {
+    title: 'Astro框架实战：快速搭建高性能博客',
+    description: '使用Astro + Tailwind CSS打造SEO友好、加载极速的个人网站。',
+    date: '2024-03-15',
+    badge: '技术教程',
+    href: '/blog/astro-blog-setup',
+  },
+];
+
+const featuredProducts = [
+  {
+    title: 'ChatGPT提示词模板库',
+    description: '涵盖营销、编程、教育等50+场景的提示词模板，即刻提升AI对话效率。',
+    badge: '数字产品',
+    href: '/products/prompt-templates',
+  },
+  {
+    title: '小红书文案生成器',
+    description: '基于AI的爆款文案生成工具，支持多风格、多平台内容创作。',
+    badge: 'AI工具',
+    href: '/products/xiaohongshu-generator',
+  },
+  {
+    title: '自动化工作流模板',
+    description: '告别重复性工作，20+可套用的自动化工作流程模板。',
+    badge: '效率工具',
+    href: '/products/automation-workflows',
+  },
+];
+---
+
+<Layout title="小勇同学 - 国企程序员的AI副业之路">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary-50 via-white to-primary-100 section overflow-hidden">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
+          🚀 国企程序员 × AI副业探索者
+        </div>
+
+        <h1 class="heading-1 mb-6">
+          你好，我是<span class="text-gradient">小勇同学</span>
+        </h1>
+
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          老家江西，现居郑州，一个在<span class="text-primary-600 font-semibold">国企搞副业的程序员</span>～
+        </p>
+
+        <div class="bg-white rounded-2xl shadow-sm p-8 mb-8 max-w-3xl mx-auto">
+          <h2 class="text-2xl font-bold mb-4 text-gray-900">关于我</h2>
+          <ul class="text-left text-gray-700 space-y-2">
+            <li>✦ 2025年开启副业，专注AI智能体方向，变现5位数</li>
+            <li>✦ AI私域赚钱星球智能体首席教练，指导过<strong class="text-primary-600">近1000名学员</strong></li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 mb-8 max-w-3xl mx-auto text-white">
+          <h2 class="text-2xl font-bold mb-4">正在做</h2>
+          <ul class="space-y-2 text-left">
+            <li>✦ 用智能体为社群运营提效，已在AI私域赚钱星球落地</li>
+            <li>✦ Coze智能体1v1陪跑，<strong>40+学员</strong></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="/about" class="btn-primary">
+            了解更多 →
+          </a>
+          <a href="/products" class="btn-secondary">
+            查看AI产品
+          </a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-3xl font-bold text-primary-600">2025</div>
+            <div class="text-sm text-gray-600">开启副业</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary-600">5位数</div>
+            <div class="text-sm text-gray-600">已变现</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary-600">1000+</div>
+            <div class="text-sm text-gray-600">学员指导</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary-600">40+</div>
+            <div class="text-sm text-gray-600">陪跑学员</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="heading-2 mb-4">我能提供</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="font-bold text-lg mb-2">100+副业实战项目SOP</h3>
+          <p class="text-gray-600 text-sm">可落地的副业项目实战指南</p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-4">🤖</div>
+          <h3 class="font-bold text-lg mb-2">Coze智能体从0到1实战</h3>
+          <p class="text-gray-600 text-sm">手把手教你搭建AI智能体</p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="font-bold text-lg mb-2">大冲私教等合伙人</h3>
+          <p class="text-gray-600 text-sm">大冲私教、靠谱销冠、IDO老徐合伙人</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Articles Section -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="heading-2 mb-4">最新文章</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          分享AI工具使用心得、智能体开发经验、技术教程和个人成长故事
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestArticles.map((article) => (
+          <Card {...article} />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/blog" class="btn-secondary">
+          查看更多文章 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="heading-2 mb-4">AI智能体产品</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          基于实际需求打造的AI工具和模板，帮助你提升效率、创造价值
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredProducts.map((product) => (
+          <Card {...product} />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/products" class="btn-primary">
+          查看所有产品 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gray-900 text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="heading-2 mb-6">
+          准备好开始你的<span class="text-primary-400">AI副业</span>之旅了吗？
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          公众号：<strong>我是小勇同学</strong>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://mp.weixin.qq.com" target="_blank" class="btn-primary">
+            关注公众号 →
+          </a>
+          <a href="/about" class="btn-secondary">
+            了解更多
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

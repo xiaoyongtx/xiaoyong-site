@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+
+const allArticles = [
+  {
+    title: '如何用AI智能体实现自动化办公',
+    description: '分享我如何使用AI智能体提升工作效率，包括邮件处理、日程管理等场景的实际应用。',
+    date: '2024-03-20',
+    badge: 'AI智能体',
+    href: '/blog/ai-agent-automation',
+  },
+  {
+    title: '程序员副业赚钱的5种方式',
+    description: '从0到1打造副业收入，程序员如何利用技术优势在业余时间创造价值。',
+    date: '2024-03-18',
+    badge: '副业变现',
+    href: '/blog/side-hustle-ways',
+  },
+  {
+    title: 'Astro框架实战：快速搭建高性能博客',
+    description: '使用Astro + Tailwind CSS打造SEO友好、加载极速的个人网站。',
+    date: '2024-03-15',
+    badge: '技术教程',
+    href: '/blog/astro-blog-setup',
+  },
+  {
+    title: 'ChatGPT提示词工程最佳实践',
+    description: '掌握提示词工程的核心技巧，让AI输出更精准、更实用的结果。',
+    date: '2024-03-12',
+    badge: 'AI工具',
+    href: '/blog/chatgpt-prompt-engineering',
+  },
+  {
+    title: '从0到1：一个程序员的AI副业探索之路',
+    description: '分享我开始AI副业的初心、遇到的困难、以及逐步成长的过程。',
+    date: '2024-03-10',
+    badge: '个人故事',
+    href: '/blog/ai-side-hustle-journey',
+  },
+  {
+    title: '5款提升效率的AI工具推荐',
+    description: '日常工作中最常用的AI工具盘点，覆盖写作、编程、设计等多个场景。',
+    date: '2024-03-08',
+    badge: '工具推荐',
+    href: '/blog/ai-tools-recommendation',
+  },
+];
+
+const categories = [
+  { name: '全部文章', count: allArticles.length },
+  { name: 'AI智能体', count: 2 },
+  { name: '副业变现', count: 3 },
+  { name: '技术教程', count: 2 },
+  { name: '工具推荐', count: 1 },
+];
+---
+
+<Layout title="博客 - 小勇同学" description="分享AI工具使用心得、智能体开发经验、技术教程和个人成长故事">
+  <div class="bg-gradient-to-br from-primary-50 via-white to-primary-100 py-16">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h1 class="heading-1 mb-4">博客文章</h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            分享AI工具使用心得、智能体开发经验、技术教程和个人成长故事
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <div class="flex flex-wrap gap-2 justify-center">
+            {categories.map((cat) => (
+              <button
+                class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  cat.name === '全部文章'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-primary-50 hover:text-primary-600'
+                }`}
+              >
+                {cat.name} ({cat.count})
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allArticles.map((article) => (
+            <Card {...article} />
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">没有找到想要的文章？</p>
+          <a href="/contact" class="btn-secondary">
+            告诉我你想看什么内容
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  href?: string;
+  image?: string;
+  badge?: string;
+  date?: string;
+}
+
+const { title, description, href = '#', image, badge, date } = Astro.props;
+---
+
+<article class="card group cursor-pointer">
+  <a href={href}>
+    {image && (
+      <div class="aspect-video overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    )}
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-3">
+        {badge && (
+          <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded-full">
+            {badge}
+          </span>
+        )}
+        {date && (
+          <span class="text-xs text-gray-500">{date}</span>
+        )}
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+        {title}
+      </h3>
+      {description && (
+        <p class="text-gray-600 text-sm line-clamp-3">{description}</p>
+      )}
+    </div>
+  </a>
+</article>

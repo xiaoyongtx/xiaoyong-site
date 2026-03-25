@@ -1,0 +1,73 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'GitHub', url: 'https://github.com', icon: 'github' },
+  { name: 'Twitter', url: 'https://twitter.com', icon: 'twitter' },
+  { name: '微信公众号', url: '#', icon: 'wechat' },
+];
+
+const quickLinks = [
+  { href: '/', label: '首页' },
+  { href: '/about', label: '关于我' },
+  { href: '/blog', label: '博客' },
+  { href: '/products', label: 'AI智能体' },
+];
+---
+
+<footer class="bg-gray-900 text-gray-300 mt-auto">
+  <div class="container-custom py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-sm">AI</span>
+          </div>
+          <span class="font-bold text-xl text-white">小勇同学</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          程序员的AI副业之路，分享AI智能体开发经验、知识变现方法论和个人成长故事。
+          让我们一起探索AI时代的无限可能！
+        </p>
+        <div class="flex space-x-4">
+          {socialLinks.map((link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+              title={link.name}
+            >
+              <span class="text-lg">{link.name === 'GitHub' ? '🐙' : link.name === 'Twitter' ? '🐦' : '💬'}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-white mb-4">快速链接</h3>
+        <ul class="space-y-2">
+          {quickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-white mb-4">联系方式</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>📧 email@example.com</li>
+          <li>📍 中国</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
+      <p>&copy; {currentYear} 小勇同学. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
